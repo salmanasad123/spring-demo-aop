@@ -24,6 +24,8 @@ public class MainDemoApp {
         // call addAccount() method on membershipDAO object
         membershipDAO.addAccount();
 
+        accountDAO.addAccount2(new Account());
+
         // close the context
         context.close();
     }

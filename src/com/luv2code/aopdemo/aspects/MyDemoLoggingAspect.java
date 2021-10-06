@@ -49,4 +49,11 @@ public class MyDemoLoggingAspect {
         System.out.println("\n======>>> Executing @Before advice on method addAccount()");
     }
 
+    // point cut expression for any method that starts with add and have a parameter of type
+    // com.luv2code.aopdemo.Account only and also any return type because we used *
+    @Before("exection(* add*(com.luv2code.aopdemo.Account))")
+    public void beforeAddAccountAdvice4() {
+        System.out.println("\n======>>> Executing @Before advice on method addAccount()");
+    }
+
 }
