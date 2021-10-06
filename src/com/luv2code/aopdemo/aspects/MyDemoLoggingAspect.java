@@ -20,11 +20,33 @@ public class MyDemoLoggingAspect {
     // this before execution of method called addAccount()
     // run this code before target object method addAccount()
     // our point cut expression will match for addAccount() method in any class
-    @Before("execution(public void addAccount())")
-    public void beforeAddAccountAdvice() {
+//    @Before("execution(public void addAccount())")
+//    public void beforeAddAccountAdvice() {
+//        // we can give any method name we want
+//
+//        // our own custom code that is executed before the method runs
+//        System.out.println("\n======>>> Executing @Before advice on method addAccount()");
+//    }
+
+    // I want my advice to only match for addAccount() method in AccountDAO class not to the addAccount()
+    // method in any other class so we are getting a strict with matching now
+    // to achieve this we give fully qualified class name to our point cut expression
+
+    @Before("execution(public void com.luv2code.aopdemo.dao.AccountDAO.addAccount())")
+    public void beforeAddAccountAdvice2() {
         // we can give any method name we want
 
         // our own custom code that is executed before the method runs
         System.out.println("\n======>>> Executing @Before advice on method addAccount()");
     }
+
+    // match with any method name that starts with add in any class, so we use wild-card
+    @Before("execution(public void add*())")
+    public void beforeAddAccountAdvice3() {
+        // we can give any method name we want
+
+        // our own custom code that is executed before the method runs
+        System.out.println("\n======>>> Executing @Before advice on method addAccount()");
+    }
+
 }
