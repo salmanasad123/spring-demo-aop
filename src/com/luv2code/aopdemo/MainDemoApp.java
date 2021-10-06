@@ -26,6 +26,8 @@ public class MainDemoApp {
 
         accountDAO.addAccount2(new Account());
 
+        accountDAO.addAccount3(new Account(), true);
+
         // close the context
         context.close();
     }

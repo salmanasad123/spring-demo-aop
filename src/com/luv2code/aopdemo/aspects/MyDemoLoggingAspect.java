@@ -51,9 +51,16 @@ public class MyDemoLoggingAspect {
 
     // point cut expression for any method that starts with add and have a parameter of type
     // com.luv2code.aopdemo.Account only and also any return type because we used *
+    // must always use the fully qualified class name
     @Before("exection(* add*(com.luv2code.aopdemo.Account))")
     public void beforeAddAccountAdvice4() {
         System.out.println("\n======>>> Executing @Before advice on method addAccount()");
     }
 
+    // we put .. after out Account type argument so it will match to any type of argument
+    // but the first one should be of type com.luv2code.aopdemo.Account
+    @Before("exection(* add*(com.luv2code.aopdemo.Account,..))")
+    public void beforeAddAccountAdvice5() {
+        System.out.println("\n======>>> Executing @Before advice on method addAccount()");
+    }
 }

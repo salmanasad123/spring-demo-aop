@@ -18,4 +18,8 @@ public class AccountDAO {
     public void addAccount2(Account account) {
         System.out.println(getClass() + ": DOING MY DB WORK ADDING ACCOUNT");
     }
+
+    public void addAccount3(Account account, boolean vipFlag) {
+        System.out.println(getClass() + ": DOING MY DB WORK ADDING ACCOUNT");
+    }
 }
